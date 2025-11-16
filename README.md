@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+##TODO:
+
+1. add projects in portfolio
+2. add description to experience in portfolio
+3. make experience and portfolio cards look good
+3.5 add square green badges for team/ employee #1
+4. add links to badges
+5. get rid of section outlines
+6. any other aesthetic changes - put the polish on
+7. figure out vercel blob storage for video
+8. buy domain and host on vercel
+
 ## Getting Started
 
 First, run the development server:
