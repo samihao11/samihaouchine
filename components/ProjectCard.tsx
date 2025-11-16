@@ -1,6 +1,7 @@
 'use client';
 
 import { Project } from '@/types';
+import Image from 'next/image';
 
 interface ProjectCardProps {
   project: Project;
@@ -9,20 +10,35 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="bg-white/5 rounded-2xl p-6 hover:bg-white/[0.07] hover:-translate-y-0.5 hover:shadow-[4px_4px_16px_rgba(0,0,0,0.4)] transition-all duration-200 border border-white/5">
-      <div className="flex items-start gap-3 mb-3">
-        {/* Emoji Icon */}
-        <div className="text-2xl flex-shrink-0">{project.icon}</div>
-        
-        <div className="flex-1 min-w-0">
-          <h3 className="text-white font-semibold text-lg mb-1">{project.name}</h3>
-          <p className="text-zinc-400 text-sm font-medium">{project.tagline}</p>
+      {/* Vertical Layout */}
+  
+      <div className="flex flex-col">
+        {/* Horizontal: Icon, Title, Tagline */}
+        <div className="flex items-center gap-3 mb-3">
+        <div className="w-px"></div>
+          <div className="w-4 h-4 flex-shrink-0">
+            <Image 
+              src={project.icon} 
+              alt={`${project.name} icon`}
+              width={16}
+              height={16}
+              className="w-full h-full object-contain brightness-0 invert"
+            />
+          </div>
+          <h3 className="text-white font-semibold text-lg">{project.name}</h3>
+          <p className="text-zinc-500 text-sm font-normal">{project.tagline}</p>
+        </div>
+
+        {/* Description */}
+        <div className="flex gap-3">
+          <div className="w-px"></div>
+          <p className="text-zinc-400 text-sm leading-relaxed mb-4">{project.description}</p>
+          <div className="w-px"></div>
         </div>
       </div>
 
-      <p className="text-zinc-400 text-sm leading-relaxed mb-4">{project.description}</p>
-
-      {/* Action Icons */}
-      <div className="flex items-center gap-2 justify-end">
+      {/* Action Icons - Bottom Right with Margin */}
+      <div className="flex items-center gap-2 justify-end mt-2">
         {project.websiteUrl && (
           <a
             href={project.websiteUrl}
@@ -62,6 +78,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </svg>
           </a>
         )}
+        <div className="w-px"></div>
+      </div>
+      
+      {/* Small text below icons */}
+      <div className="flex justify-end mt-1">
+        <div className="h-2"></div>
       </div>
     </div>
   );

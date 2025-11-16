@@ -28,7 +28,7 @@ export default function Home() {
             <div className="flex items-center">
               <Header
                 name="Sami Haouchine"
-                descriptors={['software engineer @ shield ai', 'content creator', 'umich alum']}
+                descriptors={['software engineer', 'content creator', 'umich alum']}
                 socialLinks={socialLinks}
               />
             </div>
@@ -46,7 +46,7 @@ export default function Home() {
               
               <div className="flex-1 flex flex-col md:flex-row gap-6">
                 {/* Experience Section - 1/3 */}
-                <div className="flex-1 bg-zinc-900/50 rounded-xl border border-white/10 p-6">
+                <div className="flex-1 p-6">
                   <Section title="Experience">
                     {experiences.map((exp) => (
                       <ExperienceCard key={exp.id} experience={exp} />
@@ -55,7 +55,7 @@ export default function Home() {
                 </div>
 
                 {/* Projects Section - 1/3 */}
-                <div className="flex-1 bg-zinc-900/50 rounded-xl border border-white/10 p-6">
+                <div className="flex-1 p-6">
                   <Section title="Projects">
                     {projects.map((project) => (
                       <ProjectCard key={project.id} project={project} />
@@ -64,7 +64,7 @@ export default function Home() {
                 </div>
 
                 {/* Content Section - 1/3 */}
-                <div className="flex-1 bg-zinc-900/50 rounded-xl border border-white/10 p-6">
+                <div className="flex-1 p-6">
                   <Section title="Content">
                     <VideoPlayer 
                       videoSrc="/media/mph-4.mov"
