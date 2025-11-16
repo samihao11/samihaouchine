@@ -8,7 +8,7 @@ import { socialLinks, experiences, projects } from '@/data/portfolio';
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-orange-400 via-amber-300 to-rose-400 flex items-center justify-center py-10 px-4 md:px-8 overflow-hidden">
+    <div className="min-h-screen relative bg-gradient-to-br from-rose-300 via-pink-200 to-orange-300 flex items-center justify-center py-10 px-4 md:px-8 overflow-hidden">
       {/* Animated Glow Background */}
       <div className="absolute inset-0 overflow-hidden">
         <Glow 

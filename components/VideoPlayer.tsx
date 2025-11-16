@@ -47,26 +47,40 @@ export default function VideoPlayer({
 
   const currentVideoSrc = `/media/mph-${currentEpisode}.mov`;
   return (
-    <div className="w-full max-w-sm mx-auto bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl overflow-hidden shadow-lg">
+    <div className="w-full max-w-sm mx-auto rounded-2xl overflow-hidden shadow-[8px_8px_32px_rgba(0,0,0,0.4)] bg-white/80">
       {/* Header */}
       <div className="flex items-center gap-4 px-6 py-8 h-14 bg-white/80 backdrop-blur-sm">
         <div className="w-px"></div>
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center text-white font-bold text-sm overflow-hidden">
-          {profileImage ? (
-            <Image 
-              src={profileImage} 
-              alt={username}
-              width={40}
-              height={40}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            username.charAt(0).toUpperCase()
-          )}
-        </div>
+        <a 
+          href={`https://instagram.com/${username}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity"
+        >
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center text-white font-bold text-sm overflow-hidden">
+            {profileImage ? (
+              <Image 
+                src={profileImage} 
+                alt={username}
+                width={40}
+                height={40}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              username.charAt(0).toUpperCase()
+            )}
+          </div>
+        </a>
         <div className="flex-1">
           <div className="flex items-center gap-2">
-            <span className="font-semibold text-zinc-900 text-base">{username}</span>
+            <a 
+              href={`https://instagram.com/${username}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-zinc-900 text-base hover:opacity-80 transition-opacity"
+            >
+              {username}
+            </a>
             {verified && (
               <MdVerified className="w-5 h-5 text-[#3897f0]" />
             )}
@@ -76,10 +90,11 @@ export default function VideoPlayer({
       </div>
 
       {/* Video Area */}
-      <div className="relative aspect-[9/16] bg-gradient-to-br from-emerald-100 to-green-100 flex items-center justify-center overflow-hidden">
+      <div className="relative aspect-[9/16] bg-black flex items-center justify-center">
         <video 
           key={currentVideoSrc}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover block"
+          style={{ margin: 0, padding: 0, display: 'block' }}
           controls
           playsInline
         >

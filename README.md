@@ -6,9 +6,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 3. make experience cards look good
    3.5 add square green badges for team/ employee #1
 4. add links to badges
-5. any other aesthetic changes - put the polish on
-6. figure out vercel blob storage for video
-7. buy domain and host on vercel
+5. figure out vercel blob storage for video
+6. buy domain and host on vercel
 
 ## Getting Started
 
