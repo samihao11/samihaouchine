@@ -15,9 +15,11 @@ export const experiences: Experience[] = [
     role: 'Software Engineer',
     period: 'Sep. 2025 - Present',
     logo: '/shield-ai.jpeg',
-    badge: 'Series F-1, $5.3B val',
-    badgeColor: 'orange',
-    description: 'GenAI team',
+    team: 'GenAI team',
+    badges: [
+      { text: 'Series F-1, $5.3B val', color: 'orange', link: 'https://shield.ai/shield-ai-raises-240m-at-5-3b-valuation-to-scale-hivemind-enterprise-an-ai-powered-autonomy-developer-platform/' }
+    ],
+    description: 'filler description',
   },
   {
     id: '2',
@@ -26,9 +28,11 @@ export const experiences: Experience[] = [
     role: 'Founding Engineer',
     period: 'May 2025 - Sep. 2025',
     logo: '/doublespeed.png',
-    badge: 'A16Z SR #005',
-    badgeColor: 'yellow',
-    description: 'Employee #1',
+    team: 'Employee #1',
+    badges: [
+      { text: 'A16Z SR #005', color: 'blue', link: 'https://speedrun.a16z.com/companies/doublespeed' }
+    ],
+    description: 'filler description',
   },
   {
     id: '3',
@@ -36,10 +40,12 @@ export const experiences: Experience[] = [
     companyUrl: 'https://shield.ai/',
     role: 'Software Engineering Intern',
     period: 'Jun. 2024 - Aug. 2024',
+    team: 'DevEx team',
     logo: '/shield-ai.jpeg',
-    badge: 'Series F, $2.7B val',
-    badgeColor: 'orange',
-    description: 'DevEx team',
+    badges: [
+      { text: 'Series F, $2.7B val', color: 'orange', link: 'https://shield.ai/shield-ai-raises-200m-reaching-2-7b-valuation/' }
+    ],
+    description: 'filler description',
   },
   {
     id: '4',

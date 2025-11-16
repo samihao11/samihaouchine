@@ -4,6 +4,12 @@ export interface SocialLink {
   label: string;
 }
 
+export interface Badge {
+  text: string;
+  color: 'orange' | 'yellow' | 'blue' | 'green' | 'purple';
+  link?: string;
+}
+
 export interface Experience {
   id: string;
   company: string;
@@ -11,9 +17,9 @@ export interface Experience {
   role: string;
   period: string;
   logo: string;
-  badge?: string;
-  badgeColor?: string;
+  badges?: Badge[];
   description?: string;
+  team?: string;
 }
 
 export interface Project {

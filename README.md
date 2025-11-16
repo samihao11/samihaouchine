@@ -3,11 +3,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ##TODO:
 
 2. add description to experience in portfolio
-3. make experience cards look good
-   3.5 add square green badges for team/ employee #1
-4. add links to badges
-5. figure out vercel blob storage for video
-6. buy domain and host on vercel
+3. fix spacing on experience card, change expand/collapse icon, add effect to descriptions
+4. figure out vercel blob storage for video
+5. buy domain and host on vercel
+6. make new resume
 
 ## Getting Started
 

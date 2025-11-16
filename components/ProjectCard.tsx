@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               className="w-full h-full object-contain brightness-0 invert"
             />
           </div>
-          <h3 className="text-white font-semibold text-lg">{project.name}</h3>
+          <h3 className="text-white font-normal text-lg">{project.name}</h3>
           <p className="text-zinc-500 text-sm font-normal">{project.tagline}</p>
         </div>
 
