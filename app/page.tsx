@@ -2,56 +2,87 @@ import Header from '@/components/Header';
 import Section from '@/components/Section';
 import ExperienceCard from '@/components/ExperienceCard';
 import ProjectCard from '@/components/ProjectCard';
+import VideoPlayer from '@/components/VideoPlayer';
+import { Glow } from '@/components/ui/glow';
 import { socialLinks, experiences, projects } from '@/data/portfolio';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 flex items-center justify-center py-10 px-4 md:px-8">
+    <div className="min-h-screen relative bg-gradient-to-br from-orange-400 via-amber-300 to-rose-400 flex items-center justify-center py-10 px-4 md:px-8 overflow-hidden">
+      {/* Animated Glow Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <Glow 
+          variant="center" 
+          className="opacity-60 scale-150 blur-3xl animate-pulse" 
+        />
+      </div>
+      
       {/* Main Content Card */}
-      <main className="w-full max-w-7xl bg-[#111111] rounded-2xl shadow-[8px_8px_24px_rgba(0,0,0,0.6)] border border-white/5 p-6">
-        {/* Everything inside the card now has 24px space from the edges */}
+      <main className="relative z-10 w-full max-w-7xl bg-[#111111]/95 backdrop-blur-md rounded-2xl shadow-[8px_8px_32px_rgba(0,0,0,0.7)] border border-orange-400/30 p-6">
 
         <div className="space-y-6">
           {/* Header Section */}
-          <div className="flex items-center border-b border-white/5 pb-4">
-            <Header
-              name="Sami Haouchine"
-              descriptors={['software engineer @ shield ai', 'content creator', 'umich alum']}
-              socialLinks={socialLinks}
-            />
+          <div className="flex flex-col">
+            {/* 24px spacer above */}
+            <div className="h-6"></div>
+            <div className="flex items-center">
+              <Header
+                name="Sami Haouchine"
+                descriptors={['software engineer @ shield ai', 'content creator', 'umich alum']}
+                socialLinks={socialLinks}
+              />
+            </div>
           </div>
 
-          {/* Two Column Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Left Column - Experience & Projects */}
-            <div className="flex flex-col gap-6">
-              {/* Experience Card */}
-              <div className="bg-zinc-900/50 rounded-xl border border-white/10 p-6">
-                <Section title="Experience">
-                  {experiences.map((exp) => (
-                    <ExperienceCard key={exp.id} experience={exp} />
-                  ))}
-                </Section>
-              </div>
-
-              {/* Projects Card */}
-              <div className="bg-zinc-900/50 rounded-xl border border-white/10 p-6">
-                <Section title="Projects">
-                  {projects.map((project) => (
-                    <ProjectCard key={project.id} project={project} />
-                  ))}
-                </Section>
-              </div>
-            </div>
-
-            {/* Right Column - Content */}
-            <div className="bg-zinc-900/50 rounded-xl border border-white/10 p-6">
-              <Section title="Content">
-                <div className="text-zinc-400 text-sm">
-                  <p>Content section - TODO: add matcha power hour episodes here.</p>
+          {/* Three Column Layout - Centered Container */}
+          <div className="flex flex-col">
+            {/* 24px spacer above */}
+            <div className="h-6"></div>
+            
+            {/* Horizontal container with left and right spacers */}
+            <div className="flex flex-row">
+              {/* 24px spacer left */}
+              <div className="w-6"></div>
+              
+              <div className="flex-1 flex flex-col md:flex-row gap-6">
+                {/* Experience Section - 1/3 */}
+                <div className="flex-1 bg-zinc-900/50 rounded-xl border border-white/10 p-6">
+                  <Section title="Experience">
+                    {experiences.map((exp) => (
+                      <ExperienceCard key={exp.id} experience={exp} />
+                    ))}
+                  </Section>
                 </div>
-              </Section>
+
+                {/* Projects Section - 1/3 */}
+                <div className="flex-1 bg-zinc-900/50 rounded-xl border border-white/10 p-6">
+                  <Section title="Projects">
+                    {projects.map((project) => (
+                      <ProjectCard key={project.id} project={project} />
+                    ))}
+                  </Section>
+                </div>
+
+                {/* Content Section - 1/3 */}
+                <div className="flex-1 bg-zinc-900/50 rounded-xl border border-white/10 p-6">
+                  <Section title="Content">
+                    <VideoPlayer 
+                      videoSrc="/media/mph-4.mov"
+                      username="sami.hao"
+                      description="Matcha Power Hour - Episode"
+                      verified={true}
+                      profileImage="/sami.jpg"
+                    />
+                  </Section>
+                </div>
+              </div>
+              
+              {/* 24px spacer right */}
+              <div className="w-6"></div>
             </div>
+            
+            {/* 24px spacer below */}
+            <div className="h-6"></div>
           </div>
         </div>
       </main>

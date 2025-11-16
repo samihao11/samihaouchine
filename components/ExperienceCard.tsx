@@ -2,6 +2,7 @@
 
 import { Experience } from '@/types';
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -14,14 +15,14 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
     <div className="bg-white/5 rounded-2xl p-5 hover:bg-white/[0.07] hover:-translate-y-0.5 hover:shadow-[4px_4px_16px_rgba(0,0,0,0.4)] transition-all duration-200 border border-white/5">
       <div className="flex items-start gap-4">
         {/* Logo */}
-        <div className={`w-11 h-11 rounded-full flex items-center justify-center text-sm font-semibold flex-shrink-0 ${
-          experience.logo === 'B' ? 'bg-orange-500/20 text-orange-400' :
-          experience.logo === 'C' ? 'bg-zinc-700 text-white' :
-          experience.logo === 'V' ? 'bg-purple-500/20 text-purple-400' :
-          experience.logo === 'S' ? 'bg-blue-500/20 text-blue-400' :
-          'bg-pink-500/20 text-pink-400'
-        }`}>
-          {experience.logo}
+        <div className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-white/5 overflow-hidden">
+          <Image 
+            src={experience.logo} 
+            alt={`${experience.company} logo`}
+            width={44}
+            height={44}
+            className="w-full h-full object-contain p-1.5"
+          />
         </div>
 
         {/* Content */}
