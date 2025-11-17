@@ -12,8 +12,22 @@ interface HeaderProps {
 export default function Header({ name, descriptors, socialLinks }: HeaderProps) {
   return (
     <header className="w-full relative flex flex-col items-center justify-center text-center">
-      {/* Social Icons Row - Positioned on the right */}
-      <div className="absolute right-10 top-1/2 -translate-y-1/2 flex gap-4">
+      {/* Name and Title - Centered */}
+      <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">{name}</h1>
+      <div className="h-1"></div>
+      <div className="flex items-center gap-3 text-zinc-400 text-sm mb-6 md:mb-0">
+        {descriptors.map((descriptor, index) => (
+          <React.Fragment key={index}>
+            {index > 0 && <span>|</span>}
+            <span>{descriptor}</span>
+          </React.Fragment>
+        ))}
+      </div>
+
+      <div className="h-2"></div>
+
+      {/* Social Icons Row - Below on mobile, right side on desktop */}
+      <div className="flex gap-4 mt-4 md:mt-0 md:absolute md:right-10 md:top-1/2 md:-translate-y-1/2">
         {socialLinks.map((link) => (
           <a
             key={link.label}
@@ -44,17 +58,6 @@ export default function Header({ name, descriptors, socialLinks }: HeaderProps) 
               </svg>
             )}
           </a>
-        ))}
-      </div>
-
-      {/* Name and Title - Centered */}
-      <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">{name}</h1>
-      <div className="flex items-center gap-3 text-zinc-400 text-sm">
-        {descriptors.map((descriptor, index) => (
-          <React.Fragment key={index}>
-            {index > 0 && <span>|</span>}
-            <span>{descriptor}</span>
-          </React.Fragment>
         ))}
       </div>
     </header>

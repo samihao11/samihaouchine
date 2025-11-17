@@ -33,6 +33,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
       {/* Vertical Layout */}
   
       <div className="flex flex-col">
+        <div className="h-1"></div>
         {/* Horizontal: Logo, Company Name (clickable), Team, and Expand/Collapse Button */}
         <div className="flex items-center justify-between gap-3 mb-2">
           <div className="flex items-center gap-2">
@@ -67,19 +68,19 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
                 className="text-zinc-500 hover:text-zinc-300 transition-colors text-xs flex items-center gap-1"
               >
                 {isExpanded ? (
-                  <>
+                  <div key="collapse" className="flex items-center gap-1 animate-fade-in">
                     <span>Collapse</span>
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 7L7 17M7 17H17M7 17V7" />
                     </svg>
-                  </>
+                  </div>
                 ) : (
-                  <>
+                  <div key="expand" className="flex items-center gap-1 animate-fade-in">
                     <span>Expand</span>
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
                     </svg>
-                  </>
+                  </div>
                 )}
               </button>
             )}
@@ -104,6 +105,8 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
           </div>
         )}
       </div>
+
+      <div className="h-1"></div>
 
       {/* Bottom Section: Period (left) and Badges (right) */}
       <div className="flex items-center justify-between mt-2">
