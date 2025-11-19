@@ -19,7 +19,7 @@ export const experiences: Experience[] = [
     badges: [
       { text: 'Series F-1, $5.3B val', color: 'orange', link: 'https://shield.ai/shield-ai-raises-240m-at-5-3b-valuation-to-scale-hivemind-enterprise-an-ai-powered-autonomy-developer-platform/' }
     ],
-    description: 'filler description',
+    description: 'Developing the Shield Software Quality Dashboard. (SSQD) The SSQD is a platform that uses the Claude Agent SDK to analyze code and surface issues that go beyond static analysis tools like SonarQube',
   },
   {
     id: '2',
@@ -32,7 +32,7 @@ export const experiences: Experience[] = [
     badges: [
       { text: 'A16Z SR #005', color: 'blue', link: 'https://speedrun.a16z.com/companies/doublespeed' }
     ],
-    description: 'filler description',
+    description: 'Built the doublespeed terminal. A platform for "content orchestrators" to create AI generated content at bulk and deploy it via our in-house phone farm. Worked closely with our content team to ship any features they needed to increase content deployment speed and volume',
   },
   {
     id: '3',
@@ -45,7 +45,7 @@ export const experiences: Experience[] = [
     badges: [
       { text: 'Series F, $2.7B val', color: 'orange', link: 'https://shield.ai/shield-ai-raises-200m-reaching-2-7b-valuation/' }
     ],
-    description: 'filler description',
+    description: 'Fully designed and developed the Shield Semi-AutoMatic Indexer. (SAMI) SAMI was built to offer a better solution for searching through code than what Azure DevOps offered',
   },
   {
     id: '4',
@@ -54,7 +54,7 @@ export const experiences: Experience[] = [
     role: 'Software Engineer',
     period: 'Jan. 2024 - May 2024',
     logo: '/solar-car.png',
-    description: 'Worked on simulator',
+    description: 'Led implementation of a Simulated Annealing optimization algorithm in C++, optimizing speed profiles and improving race time by 12%',
   },
 ];
 

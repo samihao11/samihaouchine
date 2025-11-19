@@ -2,8 +2,6 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ##TODO:
 
-3. add description to experience in portfolio
-4. figure out vercel blob storage for video
 5. buy domain and host on vercel
 6. make new resume
 
