@@ -18,7 +18,7 @@ export default function Home() {
       </div>
       
       {/* Main Content Card */}
-      <main className="relative z-10 w-full max-w-7xl bg-[#111111]/95 backdrop-blur-md rounded-2xl shadow-[8px_8px_32px_rgba(0,0,0,0.7)] border border-orange-400/30 p-6">
+      <main className="relative z-10 w-full max-w-7xl h-auto bg-[#111111]/95 backdrop-blur-md rounded-2xl shadow-[8px_8px_32px_rgba(0,0,0,0.7)] border border-orange-400/30 p-6">
 
         <div className="space-y-6">
           {/* Header Section */}
